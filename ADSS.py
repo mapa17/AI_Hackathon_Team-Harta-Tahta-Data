@@ -9,8 +9,6 @@ import streamlit_pydantic as sp
 
 import openai
 
-# NOTE: set the OPEN_API_KEY you get from openai with `export OPEN_API_KEY=XXXXXXXXXXX`
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 st.set_page_config(page_title="AI-Hackathon Salzburg", page_icon=":magic_wand:")
 st.title("Agriculture Decision Support System - ADSS")
@@ -70,6 +68,11 @@ usecases = {
     "Create Farming Plan": FarmingPlanForm,
     "General Questions": GenericQuestionForm,
 }
+
+# NOTE: set the OPEN_API_KEY you get from openai with `export OPEN_API_KEY=XXXXXXXXXXX`
+#openai.api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.text_input('OpenAI API Key', '')
+openai.api_key = api_key
 
 selected_usecase = st.selectbox("Select Problem you want to solve", options=usecases.keys(), index=0)
 selected_form = usecases[selected_usecase]

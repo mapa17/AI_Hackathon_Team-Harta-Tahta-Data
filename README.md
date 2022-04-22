@@ -1,5 +1,6 @@
 # Agriculture Decision Support System (ADSS)
 PoC developed during the AI Salzburg Hackathon by team Harta Tahta Data (HTD) in April 2022.
+
 Click [here](https://share.streamlit.io/mapa17/ai_hackathon_team-harta-tahta-data/ADSS.py) to try it out!
 
 ## 🌾 Description

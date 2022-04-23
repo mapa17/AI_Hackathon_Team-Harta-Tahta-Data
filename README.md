@@ -12,7 +12,14 @@ A platform that utilizes OpenAI's GPT-3 to promote sustainability in agriculture
 
 3. **Create farming plan:** Create a thorough income-efficient and sustainable farming plan for a `plant_type` plantation in `location` with `location_characteristics`
 
-4. **General questions:** Ask any questions to GPT-3
+4. **General questions:** Ask any question to GPT-3
+
+Some examples of what your input can look like:
+
+- `plant_type` : wheat, rice, radish, sweet potatoes
+- `location` : Bali, Austria, Pacific Ocean, Antarctica
+- `rain_amount` : low, medium, average, high
+- `location_characteristics` : unstable weather, the current climate situation, hilly fields
 
 ## 🌾 Requirement
 To run the app, you will need:

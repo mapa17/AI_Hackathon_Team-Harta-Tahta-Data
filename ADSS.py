@@ -31,15 +31,14 @@ class CropSelectionForm:
     def get_query(self) -> str :
         return f"Create a list of 3 high-yield crops that I can plant in {self.location} with {self.rain_amount} amount of rain."
 
-# TODO: Add template for best practice prompt
+# Create a list of things to take care when planting {self.plant_type} in {self.location}, and what to avoid.
 @dataclasses.dataclass
 class BestPracticeForm:
     plant_type: str = ""
     location: str = ""
-    location_characteristics: str = ""
 
     def get_query(self) -> str :
-        return ""
+        return f"Create a list of things to take care when planting {self.plant_type} in {self.location}, and what to avoid."
 
 
 # Create a thorough income-efficient and sustainable farming plan for a [plant type] plantation in [location] with [location characteristics e.g. weather, climate]

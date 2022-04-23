@@ -49,7 +49,7 @@ class FarmingPlanForm:
     location_characteristics: str = ""
 
     def get_query(self) -> str :
-        return f"Create a thorough income-efficient and sustainable farming plan for a {self.plant_type} plantation in {self.location} with {self.location_characteristics}"
+        return f"Create a thorough income-efficient and sustainable farming plan for a {self.plant_type} plantation in {self.location} with {self.location_characteristics}."
 
 
 # Create a thorough income-efficient and sustainable farming plan for a [plant type] plantation in [location] with [location characteristics e.g. weather, climate]

@@ -13,13 +13,13 @@ import openai
 st.set_page_config(page_title="AI-Hackathon Salzburg", page_icon=":magic_wand:")
 st.title("Agriculture Decision Support System - ADSS")
 st.markdown(
-    """[more info here](https://github.com/mapa17/AI_Hackathon_Team-Harta-Tahta-Data)"""
+    """[More info here](https://github.com/mapa17/AI_Hackathon_Team-Harta-Tahta-Data)"""
 )
   
 class RainOptions(str, Enum):
     little = "little"
     average = "an average"
-    alot = "a lot"
+    alot = "a high"
 
 # Create a list of 3 high-yield crops that I can plant in [Location] with [little/an average/a lot] amount of rain.
 @dataclasses.dataclass
@@ -63,7 +63,7 @@ class GenericQuestionForm:
 
 
 usecases = {
-    "Crop selection": CropSelectionForm,
+    "Crop Selection": CropSelectionForm,
     "Crop Best Practice": BestPracticeForm,
     "Create Farming Plan": FarmingPlanForm,
     "General Questions": GenericQuestionForm,
@@ -71,10 +71,10 @@ usecases = {
 
 # NOTE: set the OPEN_API_KEY you get from openai with `export OPEN_API_KEY=XXXXXXXXXXX`
 #openai.api_key = os.getenv("OPENAI_API_KEY")
-api_key = st.text_input('OpenAI API Key', '')
+api_key = st.text_input('Insert OpenAI API Key', '')
 openai.api_key = api_key
 
-selected_usecase = st.selectbox("Select Problem you want to solve", options=usecases.keys(), index=0)
+selected_usecase = st.selectbox("Select a problem that you want to solve", options=usecases.keys(), index=0)
 selected_form = usecases[selected_usecase]
 
 form_results = sp.pydantic_form(key=f"form_{selected_usecase}", model=selected_form)
